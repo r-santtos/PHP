@@ -20,4 +20,16 @@
       echo "to speak";
     }
   }
+
+  // Instanciar classe People
+  ------------------------------
+  $class_people = new People();
+  $class_people->ToSpeak();
 ```
+```
+  // Instanciar classe People
+  ------------------------------
+  $class_people = new People();
+  $class_people->ToSpeak();
+```
+***
