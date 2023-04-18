@@ -7,6 +7,11 @@
   <title>PHP Orientado a Objecto</title>
 </head>
 <body>
-  
+  <?php include './class/People.php' ?>
+
+  <?php
+    $class_people = new People();
+    $class_people->ToSpeak();
+  ?>
 </body>
 </html>

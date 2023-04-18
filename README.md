@@ -1,2 +1,1 @@
-# PHP
-Revisando o conhecimento em PHP
+# Revisando o conhecimento em PHP
