@@ -10,6 +10,7 @@
   <?php include './class/People.php' ?>
   <?php include './class/SignIn.php' ?>
   <?php include './class/MySQL.php' ?>
+  <?php include './class/Vehicle.php' ?>
 
   <?php
     $class_people = new People();
@@ -26,6 +27,14 @@
 
     $mysql = new MySQL("rsanttos.dev@gmail.com", "123456");
     $mysql->Connections();
+
+    echo "</br></br>";
+
+    $car = new Car();
+    $motorbike = new Motorbike();
+    var_dump($car);
+    $car->StartVehicle();
+    $motorbike->TurnOffTheVehicle();
   ?>
 </body>
 </html>

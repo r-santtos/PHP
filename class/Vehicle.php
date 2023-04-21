@@ -19,14 +19,3 @@
 
   // Classe Moto
   class Motorbike extends Vehicle {}
-
-  // Instanciando classes Car e Motorbike
-  $car = new Car();
-  $motorbike = new Motorbike();
-
-  // Verificando os atributos estendidos disponíveis da classe genérica Vehicle
-  var_dump($car);
-
-  // Chamando os métodos de carro e moto
-  $car->StartVehicle();
-  $motorbike->TurnOffTheVehicle();

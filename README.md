@@ -187,3 +187,90 @@
   $mysql = new MySQL("rsanttos.dev@gmail.com", "123456");
   $mysql->Connections();
 ```
+***
+## Conceito de herança
+* Herança na programação orientada a objetos, uma classe recebe atributos e métodos de outra classe.
+* Isso nos ajuda a evitar repetições em classes que possuem os mesmos atributos e métodos.
+* Exemplo, classe carro e moto sem usar herança.
+```
+  // Classe Carro
+  class Car {
+    public $model; 
+    public $color;
+    public $brand;
+
+    // Métodos da classe Car
+    public function StartVehicle() {
+      echo "</br></br>start vehicle OK!";
+    }
+    public function TurnOffTheVehicle() {
+      echo "</br></br>turn off the vehicle OK!</br></br>";
+    }
+  }
+
+  // Instanciando classe Car
+  $car = new Car();
+
+  // Chamando os métodos de carro
+  $car->StartVehicle();
+  $car->TurnOffTheVehicle();
+
+```
+* Classe Motorbike
+```
+  class Motorbike {
+    public $model; 
+    public $color;
+    public $brand;
+
+    // Métodos da classe Motorbike
+    public function StartVehicle() {
+      echo "</br></br>start vehicle OK!";
+    }
+    public function TurnOffTheVehicle() {
+      echo "</br></br>turn off the vehicle OK!</br></br>";
+    }
+  }
+
+  // Instanciando classe Motorbike
+  $motorbike = new Motorbike();
+
+  // Chamando os métodos de Motorbike
+  $motorbike->StartVehicle();
+  $motorbike->TurnOffTheVehicle();
+```
+* Observe que ambas as classes compartilham os mesmos atributos e métodos, então podemos criar uma classe genérica para esses métodos e atributos e estendê-los para as classes Car e Motorbike.
+```
+  // Classe genérica
+  class Vehicle {
+    public $model; 
+    public $color;
+    public $brand;
+
+    public function StartVehicle() {
+      echo "</br></br>start vehicle OK!";
+    }
+
+    public function TurnOffTheVehicle() {
+      echo "</br></br>turn off the vehicle OK!</br></br>";
+    }
+  }
+
+  // Classe Carro
+  class Car extends Vehicle {}
+
+  // Classe Moto
+  class Motorbike extends Vehicle {}
+
+  // Instanciando classes Car e Motorbike
+  $car = new Car();
+  $motorbike = new Motorbike();
+
+  // Verificando os atributos estendidos disponíveis da classe genérica Vehicle estendida a classe Car.
+  var_dump($car);
+
+  // Chamando os métodos de carro e moto
+  $car->StartVehicle();
+  $motorbike->TurnOffTheVehicle();
+```
+***
