@@ -9,6 +9,7 @@
 <body>
   <?php include './class/People.php' ?>
   <?php include './class/SignIn.php' ?>
+  <?php include './class/MySQL.php' ?>
 
   <?php
     $class_people = new People();
@@ -20,6 +21,11 @@
     $signin-> setEmail("rsanttos.dev@gmail.com");
     $signin-> setPass("123456");
     $signin->Login();
+
+    echo "</br></br>";
+
+    $mysql = new MySQL("rsanttos.dev@gmail.com", "123456");
+    $mysql->Connections();
   ?>
 </body>
 </html>

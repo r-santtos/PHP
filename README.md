@@ -34,7 +34,7 @@
 ```
 ***
 ## Criando GET & SET
-GET e SET é uma forma de adicionar uma camada de segurança ao código, impedindo que atributos privados se tornem públicos, além de permitir validações, por exemplo, verificando se o e-mail enviado é realmente um e-mail válido.
+* GET e SET é uma forma de adicionar uma camada de segurança ao código, impedindo que atributos privados se tornem públicos, além de permitir validações, por exemplo, verificando se o e-mail enviado é realmente um e-mail válido.
 ```
   // Simulando à resposta do banco de dados
   
@@ -120,4 +120,70 @@ GET e SET é uma forma de adicionar uma camada de segurança ao código, impedin
   $signin-> setEmail("rsanttos.dev@gmail.com");
   $signin-> setPass("123456");
   $signin->Login();
+```
+***
+## Criando Método construtor da classe MySQL
+* Construtores são usados ​​para criar objetos de uma classe com seus valores pré-definidos uma vez que uma classe é instanciada.
+```
+  public function __construct($user, $password) {
+    $this->setUser($user);
+    $this->setPass($password);
+  }
+```
+* Instanciar classe MySQL
+```
+  $mysql = new MySQL("rsanttos.dev@gmail.com", "123456");
+  $mysql->Connections();
+```
+* Código completo
+```
+  class MySQL {
+    // Mock Banco de Dados
+    private $mock_user = "rsanttos.dev@gmail.com";
+    private $mock_password = "123456";
+
+    // Atributos da classe MySQL
+    private $user;
+    private $pass;
+
+    // Método construtor da classe MySQL
+    //-------------------------------------------------
+    public function __construct($user, $password) {
+      $this->setUser($user);
+      $this->setPass($password);
+    }
+
+    // GET & SET do USER
+    //-------------------------------------------------
+    public function getUser() {
+      return $this->user;
+    }
+    public function setUser($parameter) {
+      $this->user = $parameter;
+    }
+
+    // GET & SET do PASSWORD
+    //-------------------------------------------------
+    public function getPass() {
+      return $this->pass;
+    }
+    public function setPass($parameter) {
+      $this->pass = $parameter;
+    }
+
+      // Método da classe Connections
+    //-------------------------------------------------
+    public function Connections() {
+      if($this->user == $this->mock_user and $this->pass == $this->mock_password) {
+        echo "Successful connections!";
+      } else {
+        echo "Connection error";
+      }
+    }
+  }
+
+  // Instanciar classe MySQL
+  //-------------------------------------------------
+  $mysql = new MySQL("rsanttos.dev@gmail.com", "123456");
+  $mysql->Connections();
 ```
