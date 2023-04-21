@@ -8,10 +8,18 @@
 </head>
 <body>
   <?php include './class/People.php' ?>
+  <?php include './class/SignIn.php' ?>
 
   <?php
     $class_people = new People();
     $class_people->ToSpeak();
+
+    echo "</br></br>";
+
+    $signin = new SignIn();
+    $signin-> setEmail("rsanttos.dev@gmail.com");
+    $signin-> setPass("123456");
+    $signin->Login();
   ?>
 </body>
 </html>

@@ -36,8 +36,3 @@
       }
     }
   }
-
-  $signin = new SignIn();
-  $signin-> setEmail("rsanttos.dev@gmail.com");
-  $signin-> setPass("123456");
-  $signin->Login();
