@@ -171,7 +171,7 @@
       $this->pass = $parameter;
     }
 
-      // Método da classe Connections
+    // Método da classe Connections
     //-------------------------------------------------
     public function Connections() {
       if($this->user == $this->mock_user and $this->pass == $this->mock_password) {
